@@ -7,10 +7,13 @@ fun main() {
     while(true) {
         println("Введите размер перевода в копейках")
         transferAmount = scanner.nextInt()
-        monthAmount += transferAmount
+
         println("Введите тип перевода")
         val paymentTypeString = scanner.next()
         val paymentType = PaymentType.valueOf(paymentTypeString)
+        if (paymentType == PaymentType.MasterCard || paymentType == PaymentType.Maestro) {
+            monthAmount += transferAmount
+        }
         println("Комиссия за перевод составит: ${calcOfCommission(transferAmount, monthAmount, paymentType)} копеек")
     }
 }
