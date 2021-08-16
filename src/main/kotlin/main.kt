@@ -43,7 +43,7 @@ fun calcOfCommission(transferAmount: Int,
             return if(transferAmount >= 30_000 && monthAmount <= 7_500_000) {
                 0
             } else {
-                ((transferAmount * 0.006) + 2_000).toInt()
+                ((transferAmount * 0.006) + 2_0000).toInt()
             }
         }
         
